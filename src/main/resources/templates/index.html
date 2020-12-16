@@ -57,7 +57,7 @@
             <h1 class="display-4 mb-3">Bienvenidos a <br><span class="font-weight-bold">Gabriela Mistral</span></h1>
             <p class="lead text-muted mb-5">Lorem Ipsum is simply dummy text of the printing and typesettin</p>
             <a href="#quienessomos" class="btn btn-dark mr-2 mb-4">Quienes somos</a>
-            <a href="eventos" class="btn btn-outline-dark mb-4">Próximos eventos</a>
+            <a href="eventos" target="_blank" class="btn btn-outline-dark mb-4">Próximos eventos</a>
         </div>
         <button type="button" data-toggle="modal" data-target="#exampleModal" class="position-relative d-flex justify-content-center align-items-center border-0 p-0" onclick="showVideo()">
             <div class="play-icon position-absolute bg-dark d-flex rounded-circle align-self-center">
@@ -127,7 +127,7 @@
                         </ul>
                     </div>
                     <div class="card-footer bg-light border-0 p-4 text-center">
-                        <a href="" class="btn btn-dark d-block mb-3">Reserva tu lugar <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+                        <a href="registro" target="_blank" class="btn btn-dark d-block mb-3">Reserva tu lugar <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
                         <small class="text-muted">Entrada libre y gratuita</small>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                         <h4 th:text="${noticia.description}"></h4>
                     </div>
                     <div class="card-footer border-0 bg-grey p-4">
-                        <a th:href="${noticia.url}" class="text-dark"><small>Leer más</small> <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+                        <a th:href="${noticia.url}" target="_blank" class="text-dark"><small>Leer más</small> <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -171,13 +171,13 @@
 <section class="bg-light border-top">
     <div class="row no-gutters">
         <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
-            <small><a href="https://www.instagram.com" class="text-dark"><i class="icon ion-logo-instagram mr-3 align-middle lead"></i> Instagram</a></small>
+            <small><a href="https://www.instagram.com" target="_blank" class="text-dark"><i class="icon ion-logo-instagram mr-3 align-middle lead"></i> Instagram</a></small>
         </div>
         <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
-            <small><a href="https://www.facebook.com" class="text-dark"><i class="icon ion-logo-facebook mr-3 align-middle lead"></i> Facebook</a></small>
+            <small><a href="https://www.facebook.com" target="_blank" class="text-dark"><i class="icon ion-logo-facebook mr-3 align-middle lead"></i> Facebook</a></small>
         </div>
         <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
-            <small><a href="https://www.youtube.com" class="text-dark"><i class="icon ion-logo-youtube mr-3 align-middle lead"></i> Youtube</a></small>
+            <small><a href="https://www.youtube.com" target="_blank" class="text-dark"><i class="icon ion-logo-youtube mr-3 align-middle lead"></i> Youtube</a></small>
         </div>
     </div>
 </section>
@@ -218,7 +218,7 @@
         </div>
         <div class="row border-top py-4">
             <div class="col-lg-6">
-                <small><span class="font-weight-bold">© 2020 GmIce.</span> Creado por <a href="https://webook.mx/" class="text-dark" target="_blank">GmIce Devs. All Rights Reserved</a></small>
+                <small><span class="font-weight-bold">© 2020 GmIce.</span> Creado por GmIce Devs. All Rights Reserved</small>
             </div>
         </div>
     </div>
