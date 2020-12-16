@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .badge { padding: .5em 1em; }
 
-.badge-secondary { 
+.badge-secondary {
     background-color: var(--grey);
     color: var(--dark);
 }
