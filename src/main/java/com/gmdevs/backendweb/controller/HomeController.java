@@ -21,7 +21,7 @@ public class HomeController {
     @Autowired
     private NoticiaService noticiaService;
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String getListaReuniones(Model model){
         List<Reunion> listaReuniones = reunionService.getReuniones();
         List<Noticia> listaNoticias = noticiaService.getNoticias();
