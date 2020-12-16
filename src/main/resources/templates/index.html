@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="GMDevs">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Ionic Icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <title>Gabriela Mistral | ICE</title>
+</head>
+
+<body id="body" class="position-relative">
+
+<nav class="navbar navbar-expand-lg bg-grey">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold text-dark" href="#">Iglesia Cristiana Evangélica</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="icon ion-md-menu lead"></i>
+        </button>
+
+        <div>
+            <div>Gabriela Mistral 3437, CABA</div>
+        </div>
+        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3">
+                    <a class="nav-link text-dark" href="#">Inicio</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a class="nav-link text-dark" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Contáctanos</a>
+                </li>
+            </ul>
+        </div>-->
+    </div>
+</nav>
+
+<section class="hero bg-grey d-flex py-6">
+    <div class="container align-self-center">
+        <div class="text-center w-75 mx-auto mb-5">
+            <h1 class="display-4 mb-3">Bienvenidos a <br><span class="font-weight-bold">Gabriela Mistral</span></h1>
+            <p class="lead text-muted mb-5">Lorem Ipsum is simply dummy text of the printing and typesettin</p>
+            <a href="#quienessomos" class="btn btn-dark mr-2 mb-4">Quienes somos</a>
+            <a href="#" class="btn btn-outline-dark mb-4">Próximos eventos</a>
+        </div>
+        <button type="button" data-toggle="modal" data-target="#exampleModal" class="position-relative d-flex justify-content-center align-items-center border-0 p-0" onclick="showVideo()">
+            <div class="play-icon position-absolute bg-dark d-flex rounded-circle align-self-center">
+                <i class="icon ion-md-play text-light align-self-center mx-auto"></i>
+            </div>
+            <img src="/img/back_03.jpg" class="img-fluid rounded">
+        </button>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="video-container">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/OY4NyPUU2yY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="py-6 bg-light">
+    <div class="container">
+        <h2 class="mb-0" id="quienessomos">Quienes Somos</h2>
+        <p class="lead text-muted mb-3">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="my-3">
+                    <div class="position-absolute member-info text-light">
+                        <h6 class="mb-0">Lorem Ipsum</h6>
+                        <small>When an unknown printer</small>
+                    </div>
+                    <img src="/img/pastor_01.png" class="img-fluid rounded" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex">
+                <div class="align-self-center">
+                    <h2 class="mb-4">Lorem Ipsum is simply dummy</h2>
+                    <p class="text-muted mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <a href="#nuestrasreuniones" class="btn btn-dark">Nuestras Reuniones<i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-6 bg-grey">
+    <div class="container">
+        <h2 class="mb-0" id="nuestrasreuniones">Nuestras Reuniones</h2>
+        <p class="lead text-muted mb-5">Días y horarios de todas nuestras reuniones y eventos</p>
+        <div class="row">
+
+            <div th:each="reunion : ${reuniones}" class="col-lg-4 d-flex align-items-stretch">
+                <div class="card border-0 rounded-0 bg-light my-3">
+                    <div class="card-header bg-light border-0 p-4">
+                        <h5 th:text="${reunion.title}" class="mb-3"></h5>
+                        <h4 th:text="${reunion.fecha.hora}" class="display-4 font-weight-bold"></h4>
+                        <span th:text="${reunion.fecha.dia}" class="badge badge-secondary"></span>
+                    </div>
+                    <div class="card-body p-4">
+                        <p th:text="${reunion.description}" class="font-weight-bold"></p>
+                        <ul th:each="actividad : ${reunion.activities}"  class="list-unstyled">
+                            <li class="mb-2"><small><i class="icon ion-md-checkmark mr-2" th:text="${actividad.title}"></i></small></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-light border-0 p-4 text-center">
+                        <a href="" class="btn btn-dark d-block mb-3">Reserva tu lugar <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+                        <small class="text-muted">Entrada libre y gratuita</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-6 bg-light">
+    <div class="container">
+        <h2 class="mb-0">Noticias recientes</h2>
+        <p class="lead text-muted mb-5">Enterate de todas nuestras noticias, eventos y planes de estudio áca</p>
+        <div class="row">
+            <div th:each="noticia : ${noticias}" class="col-lg-4 d-flex align-items-stretch">
+                <div class="card border-0 rounded-0 bg-grey my-3">
+                    <div class="card-header d-flex border-0 bg-grey p-4">
+                        <div class="mr-2">
+                            <img src="/img/member-01.jpg" class="img-fluid rounded-circle user"><!--aca va la imagen del usuario-->
+                        </div>
+                        <div class="align-self-center">
+                            <small class="d-block">Publicado por <span class="font-weight-bold" th:text="${noticia.usuario.name}"></span></small>
+                            <small class="d-block" th:text="${noticia.date}"></small>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-block mb-3">
+                            <small class="d-block"><span th:text="${noticia.title}"></span> - <span th:text="${noticia.duration}"></span> min lectura</small>
+                        </div>
+                        <h4 th:text="${noticia.description}"></h4>
+                    </div>
+                    <div class="card-footer border-0 bg-grey p-4">
+                        <a th:href="${noticia.url}" class="text-dark"><small>Leer más</small> <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light border-top">
+    <div class="row no-gutters">
+        <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
+            <small><a href="https://www.instagram.com" class="text-dark"><i class="icon ion-logo-instagram mr-3 align-middle lead"></i> Instagram</a></small>
+        </div>
+        <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
+            <small><a href="https://www.facebook.com" class="text-dark"><i class="icon ion-logo-facebook mr-3 align-middle lead"></i> Facebook</a></small>
+        </div>
+        <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
+            <small><a href="https://www.youtube.com" class="text-dark"><i class="icon ion-logo-youtube mr-3 align-middle lead"></i> Youtube</a></small>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div class="container">
+
+        <div class="w-75">
+            <h2 class="mb-0">What is Lorem Ipsum?<br> simply dummy text of the printing.</h2>
+            <p class="text-muted">Simply dummy text of the printing and typesetting has been the industry's.</p>
+        </div>
+
+
+    </div>
+</section>
+
+<footer class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="mb-5">
+                    <h6 class="mb-0">Ubicación de la Iglesia</h6>
+                    <small class="text-muted">Gabriela Mistral 3437, Villa Devoto, CABA</small>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-5">
+                    <h6 class="mb-0">Teléfono de contacto</h6>
+                    <small class="text-muted">+55 2882 2928</small>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-5">
+                    <h6 class="mb-0">Email de contacto</h6>
+                    <small class="text-muted">gabrielamistral@gmail.com</small>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top py-4">
+            <div class="col-lg-6">
+                <small><span class="font-weight-bold">© 2020 GmIce.</span> Creado por <a href="https://webook.mx/" class="text-dark" target="_blank">GmIce Devs. All Rights Reserved</a></small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
