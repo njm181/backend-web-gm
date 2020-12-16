@@ -19,6 +19,6 @@ public class EventosController {
     public String getListaEventos(Model model){
         //List<Evento> listaEventos = reunionService.getReuniones();
         //model.addAttribute("eventos", listaEventos);
-        return "eventos-lista";
+        return "/sections/eventos-lista";
     }
 }

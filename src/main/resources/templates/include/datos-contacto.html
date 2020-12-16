@@ -22,23 +22,19 @@
     <title>Gabriela Mistral | ICE</title>
 </head>
 
-<body id="body" class="position-relative">
+<body>
 
-<div th:replace="/include/navbar :: navbar"></div>
+<section class="py-6 bg-light" th:fragment="datos-contacto">
+    <div class="container">
 
-<div th:replace="/include/header :: header"></div>
+        <div class="w-75">
+            <h2 class="mb-0">What is Lorem Ipsum?<br> simply dummy text of the printing.</h2>
+            <p class="text-muted">Simply dummy text of the printing and typesetting has been the industry's.</p>
+        </div>
 
-<div th:replace="/include/quienes-somos :: quienes-somos"></div>
 
-<div th:replace="/include/reuniones :: reuniones"></div>
-
-<div th:replace="/include/noticias :: noticias"></div>
-
-<div th:replace="/include/redes-sociales :: redes-sociales"></div>
-
-<div th:replace="/include/datos-contacto :: datos-contacto"></div>
-
-<div th:replace="/include/footer :: footer"></div>
+    </div>
+</section>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -48,4 +44,3 @@
 
 </body>
 </html>
-

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="GMDevs">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Ionic Icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <title>Gabriela Mistral | ICE</title>
+</head>
+
+<body>
+
+<section class="py-6 bg-light" th:fragment="reuniones">
+    <div class="container">
+        <h2 class="mb-0" id="nuestrasreuniones">Nuestras Reuniones</h2>
+        <p class="lead text-muted mb-5">Días y horarios de todas nuestras reuniones y eventos</p>
+        <div class="row">
+
+            <div th:each="reunion : ${reuniones}" class="col-lg-4 d-flex align-items-stretch">
+                <div class="card border-0 rounded-0 bg-light my-3">
+                    <div class="card-header bg-light border-0 p-4">
+                        <h5 th:text="${reunion.title}" class="mb-3"></h5>
+                        <h4 th:text="${reunion.fecha.hora}" class="display-4 font-weight-bold"></h4>
+                        <span th:text="${reunion.fecha.dia}" class="badge badge-secondary"></span>
+                    </div>
+                    <div class="card-body p-4">
+                        <p th:text="${reunion.description}" class="font-weight-bold"></p>
+                        <ul th:each="actividad : ${reunion.activities}"  class="list-unstyled">
+                            <li class="mb-2"><small><i class="icon ion-md-checkmark mr-2" th:text="${actividad.title}"></i></small></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-light border-0 p-4 text-center">
+                        <a href="registro" target="_blank" class="btn btn-dark d-block mb-3">Reserva tu lugar <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+                        <small class="text-muted">Entrada libre y gratuita</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>

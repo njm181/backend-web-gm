@@ -12,7 +12,7 @@ public class RegistroController {
     public String getRegistro(Model model){
         //List<Evento> listaEventos = reunionService.getReuniones();
         //model.addAttribute("eventos", listaEventos);
-        return "reservar-lugar";
+        return "/sections/reservar-lugar";
     }
 
 }

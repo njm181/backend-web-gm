@@ -22,23 +22,21 @@
     <title>Gabriela Mistral | ICE</title>
 </head>
 
-<body id="body" class="position-relative">
+<body>
 
-<div th:replace="/include/navbar :: navbar"></div>
-
-<div th:replace="/include/header :: header"></div>
-
-<div th:replace="/include/quienes-somos :: quienes-somos"></div>
-
-<div th:replace="/include/reuniones :: reuniones"></div>
-
-<div th:replace="/include/noticias :: noticias"></div>
-
-<div th:replace="/include/redes-sociales :: redes-sociales"></div>
-
-<div th:replace="/include/datos-contacto :: datos-contacto"></div>
-
-<div th:replace="/include/footer :: footer"></div>
+<section class="py-6 bg-light" th:fragment="redes-sociales">
+    <div class="row no-gutters">
+        <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
+            <small><a href="https://www.instagram.com" target="_blank" class="text-dark"><i class="icon ion-logo-instagram mr-3 align-middle lead"></i> Instagram</a></small>
+        </div>
+        <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
+            <small><a href="https://www.facebook.com" target="_blank" class="text-dark"><i class="icon ion-logo-facebook mr-3 align-middle lead"></i> Facebook</a></small>
+        </div>
+        <div class="col-lg-4 col-md-12 text-center py-4 border-right border-bottom">
+            <small><a href="https://www.youtube.com" target="_blank" class="text-dark"><i class="icon ion-logo-youtube mr-3 align-middle lead"></i> Youtube</a></small>
+        </div>
+    </div>
+</section>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -48,4 +46,3 @@
 
 </body>
 </html>
-

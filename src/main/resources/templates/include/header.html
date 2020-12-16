@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="GMDevs">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Ionic Icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <title>Gabriela Mistral | ICE</title>
+</head>
+
+<body>
+<section class="hero bg-grey d-flex py-6" th:fragment="header">
+    <div class="container align-self-center">
+        <div class="text-center w-75 mx-auto mb-5">
+            <h1 class="display-4 mb-3">Bienvenidos a <br><span class="font-weight-bold">Gabriela Mistral</span></h1>
+            <p class="lead text-muted mb-5">Lorem Ipsum is simply dummy text of the printing and typesettin</p>
+            <a href="#quienessomos" class="btn btn-dark mr-2 mb-4">Quienes somos</a>
+            <a href="eventos" target="_blank" class="btn btn-outline-dark mb-4">Próximos eventos</a>
+        </div>
+        <button type="button" data-toggle="modal" data-target="#exampleModal" class="position-relative d-flex justify-content-center align-items-center border-0 p-0" onclick="showVideo()">
+            <div class="play-icon position-absolute bg-dark d-flex rounded-circle align-self-center">
+                <i class="icon ion-md-play text-light align-self-center mx-auto"></i>
+            </div>
+            <img src="/img/back_03.jpg" class="img-fluid rounded">
+        </button>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="video-container">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/OY4NyPUU2yY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>
