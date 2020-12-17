@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="GMDevs">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Ionic Icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <title>Gabriela Mistral | ICE</title>
+</head>
+
+<body>
+
+<section class="py-6 bg-light" th:fragment="noticias">
+    <div class="container">
+        <h2 class="mb-0">Noticias recientes</h2>
+        <p class="lead text-muted mb-5">Enterate de todas nuestras noticias, eventos y planes de estudio áca</p>
+        <div class="row">
+            <div th:each="noticia : ${noticias}" class="col-lg-4 d-flex align-items-stretch">
+                <div class="card border-0 rounded-0 bg-grey my-3">
+                    <div class="card-header d-flex border-0 bg-grey p-4">
+                        <div class="mr-2">
+                            <img src="/img/member-01.jpg" class="img-fluid rounded-circle user"><!--aca va la imagen del usuario-->
+                        </div>
+                        <div class="align-self-center">
+                            <small class="d-block">Publicado por <span class="font-weight-bold" th:text="${noticia.usuario.name}"></span></small>
+                            <small class="d-block" th:text="${noticia.date}"></small>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="d-block mb-3">
+                            <small class="d-block"><span th:text="${noticia.title}"></span> - <span th:text="${noticia.duration}"></span> min lectura</small>
+                        </div>
+                        <h4 th:text="${noticia.description}"></h4>
+                    </div>
+                    <div class="card-footer border-0 bg-grey p-4">
+                        <a th:href="${noticia.url}" target="_blank" class="text-dark"><small>Leer más</small> <i class="icon ion-md-arrow-forward align-middle ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>
